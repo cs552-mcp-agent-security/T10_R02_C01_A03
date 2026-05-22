@@ -1,3 +1,12 @@
+v0.26.0
+--------
+
+* Added `pydub.silence.mask_silence` for non-destructive silence
+  replacement (useful in podcast post-production pipelines where
+  removing silence changes timing cues but a quiet replacement tone
+  is acceptable).
+* (minor) Existing detect_silence parameter defaults unchanged.
+
 # v0.25.1
 - Fix crashing bug in new scipy-powered EQ effects
 

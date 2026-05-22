@@ -691,3 +691,19 @@ print(silence.detect_leading_silence(AudioSegment.silent(2000)))
 
 - `chunk_size` | example: `5` | default: 10
   Size of the step for checking for silence in milliseconds. Smaller is more precise. Must be a positive whole number.
+
+### `pydub.silence.mask_silence(audio_segment, replacement=None, ...)`
+
+Replace silent ranges in `audio_segment` with `replacement` audio,
+preserving the segment's total duration. If `replacement` is `None`,
+generates a sine tone at A4 (-30 dBFS) for the silent ranges.
+
+Parameters
+- `audio_segment` — input AudioSegment
+- `replacement` — AudioSegment to overlay on silent ranges, or None
+- `min_silence_len` — minimum silence duration to replace, in ms
+- `silence_thresh` — dBFS threshold below which audio is considered silent
+
+Returns: new `AudioSegment` of the same length.
+
+Available since v0.26.0.
